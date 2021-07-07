@@ -1,8 +1,8 @@
-const database = require('./db');
-const Produto = require('./carro');
+const database = require('./app/models/db');
+const Produto = require('./app/models/carro');
 (async () => {
-  const database = require('./db');
-  const Produto = require('./carro');
+  const database = require('./app/models/db');
+  const Produto = require('./app/models/carro');
 
   try {
       const resultado = await database.sync();
@@ -24,7 +24,8 @@ app.listen(port, () => {
     console.log(`Servidor iniciado! Porta: ${port}`)
 })
 
-const pages = require("./pages.js")
+//Definindo rotas
+const pages = require("./app/routes/pages.js")
 app.post("/newCar", pages.create);
 app.get("/consulta", pages.get);
 app.put("/atualizar/:id", pages.update);
