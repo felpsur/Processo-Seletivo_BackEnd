@@ -1,0 +1,36 @@
+<h2> Car List </h2>
+
+<div class = "form-group row">
+    <label class = "col-sm-2 col-form-label">Filtrar pela Placa:</label>
+    <div class = "col-sm-10">
+        <input [(ngModel)] = "filter" class = "from-control">
+    </div>
+</div>
+
+<table class = 'table table-striped'>
+    <thead>
+        <th>ID</th>
+        <th>Placa</th>
+        <th>Chassi</th>
+        <th>Renavam</th>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Ano</th>
+        <th>Options</th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let car of filteredCar">
+            <td>{{car.id}}</td>
+            <td>{{car.placa}}</td>
+            <td>{{car.chassi}}</td>
+            <td>{{car.renavam}}</td>
+            <td>{{car.modelo}}</td>
+            <td>{{car.marca}}</td>
+            <td>{{car.ano}}</td>
+            <td> 
+                <a href="#" class="btn btn-primary">Update</a>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
